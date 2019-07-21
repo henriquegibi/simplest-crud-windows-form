@@ -13,6 +13,7 @@ namespace simplest_crud_windows_form
         public Form1()
         {
             InitializeComponent();
+            PopGridView();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,6 +43,8 @@ namespace simplest_crud_windows_form
                 {
                     MyDbEntities.Details.Add(MyDetail);
                     MyDbEntities.SaveChanges();
+
+                    MessageBox.Show("Informações salvas.", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -50,6 +53,8 @@ namespace simplest_crud_windows_form
 
                     btnSalvar.Text = "Salvar";
                     MyDetail.ID = 0;
+
+                    MessageBox.Show("Informações atualizadas.", "Atualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -77,19 +82,19 @@ namespace simplest_crud_windows_form
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            using (var MyDBEntities = new MyModel())
+            if (MessageBox.Show("Tem certeza que deseja deletar as informações?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                var entry = MyDBEntities.Entry(MyDetail);
-                if (entry.State == EntityState.Detached)
+                using (var MyDBEntities = new MyModel())
                 {
-                    MyDBEntities.Details.Attach(MyDetail);
-                }
-                else
-                {
-                    MyDBEntities.Details.Remove(MyDetail);
-                    MyDBEntities.SaveChanges();
-                    PopGridView();
-                    ClearField();
+                    var entry = MyDBEntities.Entry(MyDetail);
+                    if (entry.State == EntityState.Detached)
+                    {
+                        MyDBEntities.Details.Attach(MyDetail);
+                        MyDBEntities.Details.Remove(MyDetail);
+                        MyDBEntities.SaveChanges();
+                        PopGridView();
+                        ClearField();
+                    }
                 }
             }
         }
