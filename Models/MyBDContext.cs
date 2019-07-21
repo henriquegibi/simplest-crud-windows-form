@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
 namespace simplest_crud_windows_form.Models
 {
@@ -11,10 +6,10 @@ namespace simplest_crud_windows_form.Models
     {
         public MyBDContext() : base("MyDBConnectionString")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyBDContext, Migrations.Configuration>("MyDBConnectionString"));
         }
 
-        public DbSet<Details> Details { get; set; }
+        public DbSet<Detail> Details { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

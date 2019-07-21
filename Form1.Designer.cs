@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataNasc = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSava = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -81,7 +81,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nome";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -126,14 +125,14 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Data de Nasc.";
             // 
-            // btnSava
+            // btnSalvar
             // 
-            this.btnSava.Location = new System.Drawing.Point(436, 6);
-            this.btnSava.Name = "btnSava";
-            this.btnSava.Size = new System.Drawing.Size(75, 23);
-            this.btnSava.TabIndex = 10;
-            this.btnSava.Text = "Salvar";
-            this.btnSava.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(436, 6);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
@@ -169,7 +168,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSava);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataNasc);
             this.Controls.Add(this.label4);
@@ -201,7 +200,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dataNasc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnSava;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridView;

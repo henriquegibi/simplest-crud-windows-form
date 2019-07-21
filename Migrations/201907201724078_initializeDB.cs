@@ -12,7 +12,7 @@ namespace simplest_crud_windows_form.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Nome = c.String(),
                         Sobrenome = c.String(),
                         Idade = c.Int(nullable: false),
                         Endereco = c.String(),
