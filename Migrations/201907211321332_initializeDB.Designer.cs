@@ -13,7 +13,7 @@ namespace simplest_crud_windows_form.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201907201724078_initializeDB"; }
+            get { return "201907211321332_initializeDB"; }
         }
         
         string IMigrationMetadata.Source
